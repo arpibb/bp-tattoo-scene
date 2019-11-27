@@ -6,6 +6,17 @@ media_folder: static/assets/images
 public_folder: assets
 
 collections:
+  - label: "Tattoo Artist"
+    name: "artists"
+    folder: "static/content/artists"
+    create: true
+    identifier_field: name
+    fields:
+      - {label: "Name", name: "name", widget: "string"}
+      - {label: Intro text, name: intro, widget: text}
+      - {label: "Portrait Image", name: "portrait", widget: "image"}
+      - {label: "Tags", name: "tags", widget: "list"}
+      
   - label: "Pages"
     name: "pages"
     files:

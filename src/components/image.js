@@ -27,9 +27,9 @@ const Image = () => {
         }
       }
     }
-  }`)
+  `)
 
-  return <Img src={data.allFile.edges.node.chilMarkdownRemark.frontmatter.mainlogo} />
+  return <Img src={data.allFile.edges.node.childMarkdownRemark.frontmatter.mainlogo} />
 }
 
 export default Image
