@@ -13,7 +13,7 @@ collections:
         name: "home"
         file: "static/content/home/home.md"
         fields:
-          - {label: Main Logo, name: mainlogo, widget: image}
+          - {label: "Main Logo", name: "mainlogo", widget: "image"}
   - label: "Tattoo Artist"
     name: "artists"
     folder: "static/content/artists"
