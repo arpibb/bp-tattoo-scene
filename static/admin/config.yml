@@ -6,6 +6,14 @@ media_folder: static/assets/images
 public_folder: assets
 
 collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Home Page"
+        name: "home"
+        file: "static/content/home/home.md"
+        fields:
+          - {label: Main Logo, name: mainlogo, widget: image}
   - label: "Tattoo Artist"
     name: "artists"
     folder: "static/content/artists"
@@ -16,12 +24,3 @@ collections:
       - {label: Intro text, name: intro, widget: text}
       - {label: "Portrait Image", name: "portrait", widget: "image"}
       - {label: "Tags", name: "tags", widget: "list"}
-collections:
-  - label: "Pages"
-    name: "pages"
-    files:
-      - label: "Home Page"
-        name: "home"
-        file: "static/content/home/home.md"
-        fields:
-          - {label: Main Logo, name: mainlogo, widget: image}
