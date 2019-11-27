@@ -8,6 +8,8 @@ module.exports = {
     'gatsby-transformer-remark',
     `gatsby-plugin-netlify-cms`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -22,8 +24,13 @@ module.exports = {
         path: `${__dirname}/static/content/artists`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `home`,
+        path: `${__dirname}/static/content/home`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

@@ -16,17 +16,20 @@ import Img from "gatsby-image"
 const Image = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+      allFile (filter: {sourceInstanceName: {eq: "home"}}) {
+        edges {
+          node {
+            childMarkdownRemark {
+              frontmatter {
+                mainlogo
+            }
           }
         }
       }
     }
   `)
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img fluid={data.allFile.edges.node.chilMarkdownRemark.frontmatter.mainlogo} />
 }
 
 export default Image
