@@ -3,7 +3,7 @@ backend:
     repo: arpibb/bp-tattoo-scene
 
 media_folder: static/assets/images
-public_folder: static/assets/images
+public_folder: assets/images
 
 collections:
   - label: "Tattoo Artist"
