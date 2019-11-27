@@ -29,7 +29,7 @@ const Image = () => {
     }
   `)
 
-  return <Img fluid={data.allFile.edges.node.chilMarkdownRemark.frontmatter.mainlogo} />
+  return <Img src={data.allFile.edges.node.chilMarkdownRemark.frontmatter.mainlogo} />
 }
 
 export default Image

@@ -16,7 +16,6 @@ collections:
       - {label: Intro text, name: intro, widget: text}
       - {label: "Portrait Image", name: "portrait", widget: "image"}
       - {label: "Tags", name: "tags", widget: "list"}
-  
   - label: "Pages"
     name: "pages"
     files:
