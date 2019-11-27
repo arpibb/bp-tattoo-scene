@@ -1,0 +1,4 @@
+---
+mainlogo: /assets/mainlogo.jpeg
+---
+
