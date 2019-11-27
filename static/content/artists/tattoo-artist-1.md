@@ -1,5 +1,5 @@
 ---
-name: Tattoo Artist 1.
+name: Tattoo Artist 1
 intro: >-
   Hey, I am a Budapest based tattoo-artist with special expertise in animal
   tattoos.
