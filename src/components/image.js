@@ -27,7 +27,7 @@ const Image = () => {
         }
       }
     }
-  `)
+  }`)
 
   return <Img src={data.allFile.edges.node.chilMarkdownRemark.frontmatter.mainlogo} />
 }
