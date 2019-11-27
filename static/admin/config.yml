@@ -2,13 +2,13 @@ backend:
     name: github
     repo: arpibb/bp-tattoo-scene
 
-media_folder: static/assets
+media_folder: static/assets/images
 public_folder: assets
 
 collections:
-  - label: "Tattoo Artists"
+  - label: "Tattoo Artist"
     name: "artists"
-    folder: "content/artists"
+    folder: "static/content/artists"
     create: true
     identifier_field: name
     fields:
