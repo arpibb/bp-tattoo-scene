@@ -1,4 +1,4 @@
 ---
-mainlogo: /assets/mainlogo.jpeg
+mainlogo: /assets/images/mainlogo.jpeg
 ---
 
