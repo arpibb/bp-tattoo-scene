@@ -6,7 +6,7 @@ import "./tag.scss"
 
 const Tag = (props) => {
     return (
-        <p className="artist-tag">{props.tag}</p>
+        <p className="tags-artist-tag">{props.tag}</p>
     )
 }
 
