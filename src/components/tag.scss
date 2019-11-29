@@ -1,0 +1,16 @@
+.artist-tag{
+    font-size: 14px;
+    padding: 15px 20px;
+    margin: 1% 1%;
+    border-radius: 5%;
+    background-color: blanchedalmond;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .1);
+    transition: 0.1s ease-out;
+
+    &:hover{
+        -webkit-transform: scale(1.06);
+        -ms-transform: scale(1.06);
+        transform: scale(1.06);
+    }
+    
+}

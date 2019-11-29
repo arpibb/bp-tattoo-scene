@@ -5,10 +5,26 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import Artistcard from "../components/artistcard"
+import Tag from "../components/tag"
 import "./index.scss"
 
 const IndexPage = (props) => {
   const artists = props.data.allFile.edges;
+
+  function getTags(artists){
+    let tags = []
+    artists.map(artist => {
+      artist.node.childMarkdownRemark.frontmatter.tags.forEach(tag=>{
+        if(!tags.includes(tag))
+          tags.push(tag)
+
+      })
+      return tags
+    })
+    return tags
+  }
+  const tags = getTags(artists)
+  console.log(tags)
 
   
   return (
@@ -27,7 +43,15 @@ const IndexPage = (props) => {
           height: "auto",
         }} />
       </div>
-      <section className="artist-cards">
+      <section id="tag-section">
+        {tags.map(tag => {
+          return(
+            <Tag
+              tag = {tag}
+            />)
+        })}
+      </section>
+      <section id="artist-cards-section">
         {artists.map(artist => {
           return (
             <Artistcard
