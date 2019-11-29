@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import Artistcard from "../components/artistcard"
+import "./index.scss"
 
 const IndexPage = (props) => {
   const artists = props.data.allFile.edges;
@@ -26,19 +27,19 @@ const IndexPage = (props) => {
           height: "auto",
         }} />
       </div>
-      <div>
-      {artists.map(artist => {
-        return (
-          <Artistcard
-            key = {artist.node.childMarkdownRemark.frontmatter.name}
-            name = {artist.node.childMarkdownRemark.frontmatter.name}
-            intro = {artist.node.childMarkdownRemark.frontmatter.intro}
-            src = {artist.node.childMarkdownRemark.frontmatter.portrait}
-            tags = {artist.node.childMarkdownRemark.frontmatter.tags}
-          />
-        )
-      })}
-      </div>
+      <section className="artist-cards">
+        {artists.map(artist => {
+          return (
+            <Artistcard
+              key = {artist.node.childMarkdownRemark.frontmatter.name}
+              name = {artist.node.childMarkdownRemark.frontmatter.name}
+              intro = {artist.node.childMarkdownRemark.frontmatter.intro}
+              src = {artist.node.childMarkdownRemark.frontmatter.portrait}
+              tags = {artist.node.childMarkdownRemark.frontmatter.tags}
+            />
+          )
+        })}
+      </section>
     </Layout>
 )}
 

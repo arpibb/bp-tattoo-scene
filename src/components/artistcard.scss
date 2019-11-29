@@ -1,0 +1,48 @@
+.artistcard {
+    box-sizing: border-box;
+    max-width: 300px;
+    text-align: center;
+    background-color: white;
+    border-radius: 2%;
+    margin: 2% 2%;
+    padding: 20px 20px;
+    //box-shadow: 10px 10px 5px  rgba(19, 18, 18, 1);
+    -webkit-box-shadow: 0 0 10px 10px rgba(97, 38, 38, 0.07);
+    -moz-box-shadow: 0 0 10px 10px rgba(19, 18, 18, 0.07);
+    box-shadow: 0 0 20px 20px rgba(19, 18, 18, 0.07);
+    transition: all 0.1s ease-in-out;
+
+    &:hover{
+        transition: all 0.1s ease-in-out;
+        -webkit-transform: scale(1.06);
+        -ms-transform: scale(1.06);
+        transform: scale(1.06);
+    }
+
+    .artist-name{
+        color: black;
+    }
+    .artist-portrait{
+        border-radius: 50%;
+    }
+    .artist-intro{
+        color: black;
+    }
+    .artist-tag{
+        display:inline-block;
+        padding: 2% 4%;
+        margin: 3% 3%;
+        border-radius: 5%;
+        background-color: blanchedalmond;
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, .1);
+        transition: 0.1s ease-out;
+
+        &:hover{
+            -webkit-transform: scale(1.06);
+            -ms-transform: scale(1.06);
+            transform: scale(1.06);
+        }
+        
+    }
+
+}
