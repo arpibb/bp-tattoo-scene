@@ -14,6 +14,11 @@
         transform: scale(1.08);
         background-color: black;
         color: white;
-    }
+        cursor: pointer;
+    } 
+}
+.active{
+    background-color: black;
+    color: white;
     
 }

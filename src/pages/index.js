@@ -7,24 +7,36 @@ import SEO from "../components/seo"
 import Artistcard from "../components/artistcard"
 import Tag from "../components/tag"
 import "./index.scss"
+import ProductFilter from "../components/productfilter"
 
 const IndexPage = (props) => {
-  const artists = props.data.allFile.edges;
+  const querydata = props.data.allFile.edges
 
+  function getArtistData(data){
+    const artists = []
+    for (let i = 0; i<data.length; i++){
+      artists.push(data[i].node.childMarkdownRemark.frontmatter)
+    }
+    console.log(artists)
+    return artists
+  }
+  
   function getTags(artists){
-    let tags = []
+    let tags = {}  
     artists.map(artist => {
-      artist.node.childMarkdownRemark.frontmatter.tags.forEach(tag=>{
-        if(!tags.includes(tag))
-          tags.push(tag)
+      artist.node.childMarkdownRemark.frontmatter.tags.forEach(tag => {
+        if(!tags[`${tag}`])
+          tags[`${tag}`] = false
 
       })
       return tags
     })
     return tags
   }
-  const tags = getTags(artists)
+  const tags = getTags(querydata)
   console.log(tags)
+  const artists = getArtistData(querydata)
+
 
   
   return (
@@ -43,23 +55,27 @@ const IndexPage = (props) => {
           height: "auto",
         }} />
       </div>
+      <ProductFilter
+        data = {tags}
+      
+      />
       <section id="tag-section">
-        {tags.map(tag => {
+        {/* {tags.map(tag => {
           return(
             <Tag
               tag = {tag}
             />)
-        })}
+        })} */}
       </section>
       <section id="artist-cards-section">
         {artists.map(artist => {
           return (
             <Artistcard
-              key = {artist.node.childMarkdownRemark.frontmatter.name}
-              name = {artist.node.childMarkdownRemark.frontmatter.name}
-              intro = {artist.node.childMarkdownRemark.frontmatter.intro}
-              src = {artist.node.childMarkdownRemark.frontmatter.portrait}
-              tags = {artist.node.childMarkdownRemark.frontmatter.tags}
+              key = {artist.name}
+              name = {artist.name}
+              intro = {artist.intro}
+              src = {artist.portrait}
+              tags = {artist.tags}
             />
           )
         })}
