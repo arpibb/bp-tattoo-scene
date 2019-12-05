@@ -34,8 +34,9 @@ const IndexPage = (props) => {
     return tags
   }
   const tags = getTags(querydata)
-  console.log(tags)
+  
   const artists = getArtistData(querydata)
+  console.log(tags)
 
 
   
@@ -60,12 +61,13 @@ const IndexPage = (props) => {
       
       />
       <section id="tag-section">
-        {/* {tags.map(tag => {
+        {Object.keys(tags).map(key => {
+          console.log(key)
           return(
             <Tag
-              tag = {tag}
+              tag = {key}
             />)
-        })} */}
+        })}
       </section>
       <section id="artist-cards-section">
         {artists.map(artist => {
