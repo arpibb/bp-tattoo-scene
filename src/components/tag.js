@@ -5,24 +5,27 @@ import React from "react";
 import "./tag.scss"
 
 class Tag extends React.Component {
-    constructor(){
-        super();
-        this.state = {
-            active: false
-        }
-    }
-
-    changeColor(){
-        this.setState({active: !this.state.active})
-    }
-
 
     render() {
-        let btn_class = this.state.active ? "tags-artist-tag active" : "tags-artist-tag";
+
+        let tagIsOnArtistCard = this.props.tagIsOnArtistCard
+
+        let btnClass = ""
+
+        if(tagIsOnArtistCard){
+            btnClass = this.props.isActive ? "artist-tag active" : "artist-tag inactive";
+        }
+        else{
+            btnClass = this.props.isActive ? "tags-artist-tag active" : "tags-artist-tag inactive";
+        }
+        //console.log(this.props.isActive)
 
         return(
-        <p className={btn_class} onClick={this.changeColor.bind(this)}
-        >{this.props.tag}</p>        )
+            <p 
+                className={btnClass}
+                onClick = {(e) => this.props.handleClick(this.props.tagName)}
+            >{this.props.tagName}</p>
+        )
     }
 }
 

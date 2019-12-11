@@ -4,8 +4,8 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import Artistcard from "../components/artistcard"
-import Tag from "../components/tag"
+//import Artistcard from "../components/artistcard"
+//import Tag from "../components/tag"
 import "./index.scss"
 import ProductFilter from "../components/productfilter"
 
@@ -17,7 +17,7 @@ const IndexPage = (props) => {
     for (let i = 0; i<data.length; i++){
       artists.push(data[i].node.childMarkdownRemark.frontmatter)
     }
-    console.log(artists)
+    //console.log(artists)
     return artists
   }
   
@@ -36,7 +36,7 @@ const IndexPage = (props) => {
   const tags = getTags(querydata)
   
   const artists = getArtistData(querydata)
-  console.log(tags)
+  //console.log(tags)
 
 
   
@@ -56,31 +56,12 @@ const IndexPage = (props) => {
           height: "auto",
         }} />
       </div>
-      <ProductFilter
-        data = {tags}
       
-      />
-      <section id="tag-section">
-        {Object.keys(tags).map(key => {
-          console.log(key)
-          return(
-            <Tag
-              tag = {key}
-            />)
-        })}
-      </section>
-      <section id="artist-cards-section">
-        {artists.map(artist => {
-          return (
-            <Artistcard
-              key = {artist.name}
-              name = {artist.name}
-              intro = {artist.intro}
-              src = {artist.portrait}
-              tags = {artist.tags}
-            />
-          )
-        })}
+      <section>
+        <ProductFilter
+          stateObject = {tags}
+          artists = {artists}
+        />
       </section>
     </Layout>
 )}

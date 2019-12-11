@@ -1,6 +1,28 @@
+$in-out: true !default;
+$fromY: 0 !default;
+$toY: 10% !default;
+$fromOpacity: 1 !default;
+$toOpacity: 0 !default;
+
+@if $in-out {
+    $fromY: 0;
+    $toY: 10%;
+    $fromOpacity: 1;
+    $toOpacity: 0;
+    $in-out: false;
+}
+@else {
+    $fromY: 0;
+    $toY: 10%;
+    $fromOpacity: 1;
+    $toOpacity: 0;
+    $in-out: true;
+}
+
 .artistcard {
     box-sizing: border-box;
     max-width: 300px;
+    height: 350px;
     text-align: center;
     background-color: white;
     border-radius: 2%;
@@ -10,7 +32,9 @@
     -webkit-box-shadow: 0 0 10px 10px rgba(97, 38, 38, 0.07);
     -moz-box-shadow: 0 0 10px 10px rgba(19, 18, 18, 0.07);
     box-shadow: 0 0 20px 20px rgba(19, 18, 18, 0.07);
-    transition: all 0.1s ease-in-out;
+    transition: all 0.1 ease-in-out;
+    animation: flyIn 0.6s ease-in-out;
+
 
     &:hover{
         transition: all 0.1s ease-in-out;
@@ -28,25 +52,12 @@
     .artist-intro{
         color: black;
     }
-    .artist-tag{
-        display:inline-block;
-        padding: 2% 4%;
-        margin: 3% 3%;
-        border: 1px solid black;
-        border-radius: 5%;
-        background-color: white;
-        box-shadow: 0px 5px 5px rgba(0, 0, 0, .1);
-        transition: 0.1s ease-out;
-
-        &:hover{
-            -webkit-transform: scale(1.06);
-            -ms-transform: scale(1.06);
-            transform: scale(1.06);
-            background-color: black;
-            color: white;
-
-        }
-        
-    }
-
 }
+@-webkit-keyframes flyIn { from { opacity: $fromOpacity;
+    transform: translateY($fromY);} to { opacity: $toOpacity; transform: translateY($toY); }  }
+       @-moz-keyframes flyIn { from { opacity:$fromOpacity;
+    transform: translateY($fromY);} to { opacity:$toOpacity; transform: translateY($toY); }  }
+         @-o-keyframes flyIn { from { opacity:$fromOpacity;
+    transform: translateY($fromY);} to { opacity:$toOpacity; transform: translateY($toY); }  }
+            @keyframes flyIn { from { opacity: 1;
+    transform: translateY(0);} to { opacity:0; transform: translateY(10%); }  }

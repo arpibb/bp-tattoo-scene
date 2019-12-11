@@ -3,6 +3,8 @@ import React from "react"
 //import Img from "gatsby-image"
 
 import "./artistcard.scss"
+import Tag from "../components/tag"
+//import Tag from "../components/tag"
 
 const Artistcard = (props) => {
 
@@ -15,9 +17,16 @@ const Artistcard = (props) => {
                     height: "auto",
                 }}/>
                 <p className="artist-intro">{props.intro}</p>
+
                 {props.tags.map(tag => {
                     return (
-                        <p className="artist-tag">{tag}</p>
+                        <Tag
+                            tagName = {tag}
+                            isActive = {props.tagsState[tag]}
+                            handleClick = {props.handleClick}
+                            tagIsOnArtistCard = {true}
+                        />
+                        // <p className="artist-tag">{tag}</p>
                     )
                 })}
         </div>
