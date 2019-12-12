@@ -34,9 +34,9 @@ const IndexPage = (props) => {
     return tags
   }
   const tags = getTags(querydata)
-  
   const artists = getArtistData(querydata)
   //console.log(tags)
+  
   function setBgColor(){
     const bgColors = ["#DBED00","#FD007D","#FF5B00","#00C60C"]
     let bgColor = bgColors[Math.floor(Math.random() * bgColors.length)]
