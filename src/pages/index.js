@@ -47,8 +47,8 @@ const IndexPage = (props) => {
   
   return (
     <Layout
-      bgColor = {bgColor}
-    > <Helmet>
+      bgColor = {bgColor}>
+       <Helmet>
         <style>{`body { background-color: ${bgColor}; }`}</style>
       </Helmet>
       <SEO title="Home" />

@@ -12,19 +12,7 @@ import PropTypes from "prop-types"
 import Header from "./header"
 import "./layout.scss"
 
-class Layout extends React.Component {
-  constructor(props){
-    super(props);
-    this.bgColor = this.props.bgColor
-    this.state = {
-      documentLoaded: false,
-    }
-} 
-  componentDidMount(){
-    this.setState({documentLoaded:true});
-  }
-
-  render(){
+const Layout = ({children}) => {
   //   const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
   //     site {
@@ -34,12 +22,6 @@ class Layout extends React.Component {
   //     }
   //   }
   // `)
-    
-  
-  // let bgColor = this.bgColor
-  //   if(this.state.documentLoaded){
-  //     document.body.style = `background: ${bgColor};`;
-  //   }
 
   return (
     <>
@@ -53,7 +35,7 @@ class Layout extends React.Component {
           paddingTop: 0,
         }}
       >
-        <main>{this.props.children}</main>
+        <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}
@@ -62,7 +44,7 @@ class Layout extends React.Component {
       </div>
     </>
   )
-}}
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

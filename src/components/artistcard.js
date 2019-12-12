@@ -7,7 +7,6 @@ import Tag from "../components/tag"
 //import Tag from "../components/tag"
 
 const Artistcard = (props) => {
-
     let bgColor = props.bgColor
 
     return (
