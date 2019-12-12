@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
+import {Helmet} from 'react-helmet';
 
 import Layout from "../components/layout"
 import Image from "../components/image"
@@ -34,9 +35,9 @@ const IndexPage = (props) => {
     return tags
   }
   const tags = getTags(querydata)
+
   const artists = getArtistData(querydata)
   //console.log(tags)
-  
   function setBgColor(){
     const bgColors = ["#DBED00","#FD007D","#FF5B00","#00C60C"]
     let bgColor = bgColors[Math.floor(Math.random() * bgColors.length)]
@@ -47,7 +48,9 @@ const IndexPage = (props) => {
   return (
     <Layout
       bgColor = {bgColor}
-    >
+    > <Helmet>
+        <style>{`body { background-color: ${bgColor}; }`}</style>
+      </Helmet>
       <SEO title="Home" />
       <div 
       style={{ 

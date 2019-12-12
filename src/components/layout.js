@@ -36,10 +36,10 @@ class Layout extends React.Component {
   // `)
     
   
-  let bgColor = this.bgColor
-    if(this.state.documentLoaded){
-      document.body.style = `background: ${bgColor};`;
-    }
+  // let bgColor = this.bgColor
+  //   if(this.state.documentLoaded){
+  //     document.body.style = `background: ${bgColor};`;
+  //   }
 
   return (
     <>
