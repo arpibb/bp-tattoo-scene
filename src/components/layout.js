@@ -44,7 +44,7 @@ class Layout extends React.Component {
   return (
     <>
       {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
-      <Header/>>
+      <Header/>
       <div
         style={{
           margin: `0 auto`,
