@@ -6,8 +6,7 @@ import "./tag.scss"
 
 class Tag extends React.Component {
 
-    render() {
-
+    getBtnClass(){
         let tagIsOnArtistCard = this.props.tagIsOnArtistCard
 
         let btnClass = ""
@@ -18,10 +17,19 @@ class Tag extends React.Component {
         else{
             btnClass = this.props.isActive ? "tags-artist-tag active" : "tags-artist-tag inactive";
         }
+        return btnClass
+    }
+
+
+    render() {
+
+        let btnClass = this.getBtnClass()
+        let bgColor = this.props.bgColor;
+        
         //console.log(this.props.isActive)
 
         return(
-            <p 
+            <p style={{backgroundColor: `${bgColor}`}}
                 className={btnClass}
                 onClick = {(e) => this.props.handleClick(this.props.tagName)}
             >{this.props.tagName}</p>

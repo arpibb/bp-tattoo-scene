@@ -8,8 +8,10 @@ import Tag from "../components/tag"
 
 const Artistcard = (props) => {
 
+    let bgColor = props.bgColor
+
     return (
-        <div className="artistcard">
+        <div className="artistcard" style={{backgroundColor: `${bgColor}`}}>
                 <h3 className="artist-name">{props.name}</h3>
                 <img className="artist-portrait" src={props.src} alt="Something went wrong :(" 
                 style= {{
@@ -25,6 +27,7 @@ const Artistcard = (props) => {
                             isActive = {props.tagsState[tag]}
                             handleClick = {props.handleClick}
                             tagIsOnArtistCard = {true}
+                            bgColor = {bgColor}
                         />
                         // <p className="artist-tag">{tag}</p>
                     )

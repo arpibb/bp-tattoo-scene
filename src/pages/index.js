@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 //import Artistcard from "../components/artistcard"
 //import Tag from "../components/tag"
 import "./index.scss"
-import ProductFilter from "../components/productfilter"
+import ArtistFilter from "../components/artistfilter"
 
 const IndexPage = (props) => {
   const querydata = props.data.allFile.edges
@@ -37,11 +37,17 @@ const IndexPage = (props) => {
   
   const artists = getArtistData(querydata)
   //console.log(tags)
-
-
+  function setBgColor(){
+    const bgColors = ["#DBED00","#FD007D","#FF5B00","#00C60C"]
+    let bgColor = bgColors[Math.floor(Math.random() * bgColors.length)]
+    return bgColor
+  }
+  let bgColor = setBgColor()
   
   return (
-    <Layout>
+    <Layout
+      bgColor = {bgColor}
+    >
       <SEO title="Home" />
       <div 
       style={{ 
@@ -54,13 +60,16 @@ const IndexPage = (props) => {
         style={{
           width: "auto",
           height: "auto",
-        }} />
+        }}
+        bgColor = {bgColor}
+         />
       </div>
       
       <section>
-        <ProductFilter
+        <ArtistFilter
           stateObject = {tags}
           artists = {artists}
+          bgColor = {bgColor}
         />
       </section>
     </Layout>

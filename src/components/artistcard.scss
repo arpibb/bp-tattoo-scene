@@ -61,3 +61,12 @@ $toOpacity: 0 !default;
     transform: translateY($fromY);} to { opacity:$toOpacity; transform: translateY($toY); }  }
             @keyframes flyIn { from { opacity: 0;
     transform: translateY(10%);} to { opacity:1; transform: translateY(0); }  }
+
+@-webkit-keyframes flyOut { from { opacity: $fromOpacity;
+    transform: translateY($fromY);} to { opacity: $toOpacity; transform: translateY($toY); }  }
+        @-moz-keyframes flyOut { from { opacity:$fromOpacity;
+    transform: translateY($fromY);} to { opacity:$toOpacity; transform: translateY($toY); }  }
+            @-o-keyframes flyOut { from { opacity:$fromOpacity;
+    transform: translateY($fromY);} to { opacity:$toOpacity; transform: translateY($toY); }  }
+            @keyframes flyOut { from { opacity: 1;
+    transform: translateY(0);} to { opacity:0; transform: translateY(10%); }  }

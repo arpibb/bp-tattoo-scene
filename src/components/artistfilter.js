@@ -2,12 +2,13 @@ import React from "react"
 
 import Tag from "../components/tag"
 import Artistcard from "../components/artistcard"
-import "./productfilter.scss"
+import "./artistfilter.scss"
 
 
-class ProductFilter extends React.Component {
+class ArtistFilter extends React.Component {
     constructor(props){
         super(props);
+        this.bgColor = this.props.bgColor
         this.artists = this.props.artists
         this.handleClick = this.handleClick.bind(this);
         this.state = props.stateObject
@@ -23,7 +24,6 @@ class ProductFilter extends React.Component {
             return activeTags})
         console.log(activeTags)
         return activeTags
-        
     }
     // When one of the tags is clicked this function gets called, and changes the state of the tag from true -> false and false -> true
     handleClick(tagName) {
@@ -49,6 +49,7 @@ class ProductFilter extends React.Component {
                             isActive = {entry[1]}
                             handleClick = {this.handleClick}
                             tagIsOnArtistCard = {false}
+                            bgColor = {this.bgColor}
                         />
                     )})}
             </section>
@@ -66,6 +67,7 @@ class ProductFilter extends React.Component {
                                 tags = {artist.tags}
                                 tagsState = {this.state}
                                 handleClick = {this.handleClick}
+                                bgColor = {this.bgColor}
                             />)
                  })}
             </section>
@@ -75,4 +77,4 @@ class ProductFilter extends React.Component {
     }
 }
 
-export default ProductFilter
+export default ArtistFilter
