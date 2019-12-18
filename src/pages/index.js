@@ -16,17 +16,17 @@ class IndexPage extends React.Component {
       bgState: "#DBED00"
     }
 }
-  // setBgColor(){
-  //   const bgColors = ["#DBED00","#FD007D","#FF5B00","#00C60C"]
-  //   let bgColor = bgColors[Math.floor(Math.random() * bgColors.length)]
-  //   this.setState({
-  //     bgState: bgColor
-  //   })
-  //   return bgColor
-  // }
-  // componentWillMount(){
-  //   this.setBgColor()
-  // }
+  setBgColor(){
+    const bgColors = ["#DBED00","#FD007D","#FF5B00","#00C60C"]
+    let bgColor = bgColors[Math.floor(Math.random() * bgColors.length)]
+    this.setState({
+      bgState: bgColor
+    })
+    return bgColor
+  }
+  componentDidMount(){
+    this.setBgColor()
+  }
 
   render() {
     //const querydata = props.data.allFile.edges
@@ -53,21 +53,21 @@ class IndexPage extends React.Component {
       return tags
     }
 
-    function getBgColor(){
-      const bgColors = ["#DBED00","#FD007D","#FF5B00","#00C60C"]
-      let bgColor = bgColors[Math.floor(Math.random() * bgColors.length)]
+    // function getBgColor(){
+    //   const bgColors = ["#DBED00","#FD007D","#FF5B00","#00C60C"]
+    //   let bgColor = bgColors[Math.floor(Math.random() * bgColors.length)]
       
-      return bgColor
-    }
+    //   return bgColor
+    // }
     const tags = getTags(this.querydata)
 
     const artists = getArtistData(this.querydata)
 
-    let bgColor = getBgColor()
+    let bgColor = this.state.bgState
 
 
     //console.log(tags)
-    console.log(bgColor)
+    console.log(this.bgColor)
     
   
   return (

@@ -39,6 +39,7 @@ class ArtistFilter extends React.Component {
       }
 
       static getDerivedStateFromProps(nextProps, prevState){
+        console.log(prevState.bgColor + nextProps.bgColor)  
         if(nextProps.bgColor!==prevState.bgColor){
           return { bgColor: nextProps.bgColor};
        }
