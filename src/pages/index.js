@@ -13,7 +13,7 @@ class IndexPage extends React.Component {
     this.querydata = this.props.data.allFile.edges
     //this.setBgColor = this.setBgColor.bind(this)
     this.state = {
-      bgState: "#DBED00"
+      bgState: ""
     }
 }
   setBgColor(){
