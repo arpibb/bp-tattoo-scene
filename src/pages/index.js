@@ -1,53 +1,77 @@
 import React from "react"
 import { graphql } from "gatsby"
 import {Helmet} from 'react-helmet';
-
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-//import Artistcard from "../components/artistcard"
-//import Tag from "../components/tag"
 import "./index.scss"
 import ArtistFilter from "../components/artistfilter"
 
-const IndexPage = (props) => {
-  const querydata = props.data.allFile.edges
-
-  function getArtistData(data){
-    const artists = []
-    for (let i = 0; i<data.length; i++){
-      artists.push(data[i].node.childMarkdownRemark.frontmatter)
+class IndexPage extends React.Component {
+  constructor(props){
+    super(props);
+    this.querydata = this.props.data.allFile.edges
+    //this.setBgColor = this.setBgColor.bind(this)
+    this.state = {
+      bgState: "#DBED00"
     }
-    //console.log(artists)
-    return artists
-  }
-  
-  function getTags(artists){
-    let tags = {}  
-    artists.map(artist => {
-      artist.node.childMarkdownRemark.frontmatter.tags.forEach(tag => {
-        if(!tags[`${tag}`])
-          tags[`${tag}`] = false
+}
+  // setBgColor(){
+  //   const bgColors = ["#DBED00","#FD007D","#FF5B00","#00C60C"]
+  //   let bgColor = bgColors[Math.floor(Math.random() * bgColors.length)]
+  //   this.setState({
+  //     bgState: bgColor
+  //   })
+  //   return bgColor
+  // }
+  // componentWillMount(){
+  //   this.setBgColor()
+  // }
 
+  render() {
+    //const querydata = props.data.allFile.edges
+
+    function getArtistData(data){
+      const artists = []
+      for (let i = 0; i<data.length; i++){
+        artists.push(data[i].node.childMarkdownRemark.frontmatter)
+      }
+      //console.log(artists)
+      return artists
+    }
+    
+    function getTags(artists){
+      let tags = {}  
+      artists.map(artist => {
+        artist.node.childMarkdownRemark.frontmatter.tags.forEach(tag => {
+          if(!tags[`${tag}`])
+            tags[`${tag}`] = false
+
+        })
+        return tags
       })
       return tags
-    })
-    return tags
-  }
-  const tags = getTags(querydata)
+    }
 
-  const artists = getArtistData(querydata)
-  //console.log(tags)
-  function setBgColor(){
-    const bgColors = ["#DBED00","#FD007D","#FF5B00","#00C60C"]
-    let bgColor = bgColors[Math.floor(Math.random() * bgColors.length)]
-    return bgColor
-  }
-  let bgColor = setBgColor()
+    function getBgColor(){
+      const bgColors = ["#DBED00","#FD007D","#FF5B00","#00C60C"]
+      let bgColor = bgColors[Math.floor(Math.random() * bgColors.length)]
+      
+      return bgColor
+    }
+    const tags = getTags(this.querydata)
+
+    const artists = getArtistData(this.querydata)
+
+    let bgColor = getBgColor()
+
+
+    //console.log(tags)
+    console.log(bgColor)
+    
   
   return (
-    <Layout
-      bgColor = {bgColor}>
+    <Layout>
        <Helmet>
         <style>{`body { background-color: ${bgColor}; }`}</style>
       </Helmet>
@@ -76,7 +100,7 @@ const IndexPage = (props) => {
         />
       </section>
     </Layout>
-)}
+)}}
 
 export default IndexPage
 

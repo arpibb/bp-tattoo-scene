@@ -5,6 +5,11 @@ import React from "react";
 import "./tag.scss"
 
 class Tag extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            bgColor: this.props.bgColor
+        }}
 
     getBtnClass(){
         let tagIsOnArtistCard = this.props.tagIsOnArtistCard
@@ -20,16 +25,22 @@ class Tag extends React.Component {
         return btnClass
     }
 
+    onChange(){
+        this.setState({
+            bgColor: this.props.bgColor
+        })
+    }
+
 
     render() {
 
         let btnClass = this.getBtnClass()
-        let bgColor = this.props.bgColor;
+        //let bgColor = this.state.bgColor;
         
         //console.log(this.props.isActive)
 
         return(
-            <p style={{backgroundColor: `${bgColor}`}}
+            <p style={{backgroundColor: `${this.state.bgColor}`}}
                 className={btnClass}
                 onClick = {(e) => this.props.handleClick(this.props.tagName)}
             >{this.props.tagName}</p>
