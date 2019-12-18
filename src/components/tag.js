@@ -25,10 +25,11 @@ class Tag extends React.Component {
         return btnClass
     }
 
-    onChange(){
-        this.setState({
-            bgColor: this.props.bgColor
-        })
+    static getDerivedStateFromProps(nextProps, prevState){
+        if(nextProps.bgColor!==prevState.bgColor){
+          return { bgColor: nextProps.bgColor};
+       }
+       else return null;
     }
 
 

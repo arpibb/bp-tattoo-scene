@@ -30,7 +30,7 @@ class ArtistFilter extends React.Component {
     }
     // When one of the tags is clicked this function gets called, and changes the state of the tag from true -> false and false -> true
     handleClick(tagName) {
-        console.log(this.state.tags[tagName])
+        //console.log(this.state.tags[tagName])
         let stateName = tagName
         this.setState(prevState => ({tags:
           {...prevState.tags,
@@ -38,11 +38,18 @@ class ArtistFilter extends React.Component {
         }))
       }
 
+      static getDerivedStateFromProps(nextProps, prevState){
+        if(nextProps.bgColor!==prevState.bgColor){
+          return { bgColor: nextProps.bgColor};
+       }
+       else return null;
+     }
+
     render(){
 
         let activeTags = this.getActiveTags();
         //console.log(this.state.bgColor+"bgcolor")
-        console.log(this.state.tags)
+        console.log(this.state.bgColor)
         return(
             <div>
             {/* Tag-section provides the filters for the tattoo artist filter component, 

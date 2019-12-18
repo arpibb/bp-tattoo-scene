@@ -19,10 +19,16 @@ class Artistcard extends React.Component {
             bgColor: this.props.bgColor
         })
     }
+    static getDerivedStateFromProps(nextProps, prevState){
+        if(nextProps.bgColor!==prevState.bgColor){
+          return { bgColor: nextProps.bgColor};
+       }
+       else return null;
+    }
     
     render(){
         let bgColor = this.props.bgColor
-        console.log(bgColor)
+        //console.log(bgColor)
         return (
             <div className="artistcard" style={{backgroundColor: `${bgColor}`}}>
                     <h3 className="artist-name">{this.props.name}</h3>
