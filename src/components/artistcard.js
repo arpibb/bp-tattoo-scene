@@ -30,15 +30,18 @@ class Artistcard extends React.Component {
     render(){
         // let bgColor = this.props.bgColor
         //console.log(bgColor)
+        console.log(this.props.insta)
         return (
+            
             <div className="artistcard" >
-                    <h3 className="artist-name">{this.props.name}</h3>
-                    <img className="artist-portrait" src={this.props.src} alt="Something went wrong :(" 
+                    <a className="artist-link" href={this.props.insta}><h3 className="artist-name">{this.props.name}</h3></a>
+                    
+                    {/* <img className="artist-portrait" src={this.props.src} alt="Something went wrong :(" 
                     style= {{
                         maxWidth: "75px",
                         height: "auto",
-                    }}/>
-                    <p className="artist-intro">{this.props.intro}</p>
+                    }}/> */}
+                    {/* <p className="artist-intro">{this.props.intro}</p> */}
 
                     {this.props.tags.map(tag => {
                         return (

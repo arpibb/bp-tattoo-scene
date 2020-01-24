@@ -65,8 +65,7 @@ class ArtistFilter extends React.Component {
                             <Artistcard
                                 key = {artist.name}
                                 name = {artist.name}
-                                intro = {artist.intro}
-                                src = {artist.portrait}
+                                insta = {artist.insta}
                                 tags = {artist.tags}
                                 tagsState = {this.state}
                                 handleClick = {this.handleClick}

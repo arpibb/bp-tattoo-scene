@@ -88,8 +88,7 @@ export const query = graphql`
           childMarkdownRemark {
             frontmatter {
               name
-              intro
-              portrait
+              insta
               tags
           }
         }
