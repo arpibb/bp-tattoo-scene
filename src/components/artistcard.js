@@ -2,8 +2,9 @@ import React from "react"
 //import { useStaticQuery, graphql } from "gatsby"
 //import Img from "gatsby-image"
 
-import "./artistcard.scss"
+//import "./artistcard.scss"
 import Tag from "../components/tag"
+import './global.scss'
 //import Tag from "../components/tag"
 
 class Artistcard extends React.Component {

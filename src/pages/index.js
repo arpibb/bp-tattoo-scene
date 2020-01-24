@@ -4,7 +4,7 @@ import {Helmet} from 'react-helmet';
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import "./index.scss"
+//import "./index.scss"
 import ArtistFilter from "../components/artistfilter"
 import '../components/global.scss'
 
