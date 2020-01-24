@@ -1,0 +1,234 @@
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    animation: colorchange 10s; /* animation-name followed by duration in seconds*/
+         /* you could also use milliseconds (ms) or something like 2.5s */
+    -webkit-animation: colorchange 10s;
+    animation-iteration-count: infinite; /* Chrome and Safari */
+    
+    @keyframes colorchange
+    {
+      0%   {background-color: #FD007D;}
+      25%  {background-color: #DBED00;}
+      50%  {background-color: #FF5B00;}
+      75%  {background-color: #00C60C;}
+      100% {background-color: #DBED00;}
+    }
+    @-webkit-keyframes colorchange 
+    {
+      0%   {background-color: #DBED00;}
+      25%  {background-color: #FD007D;}
+      50%  {background-color: #FF5B00;}
+      75%  {background-color: #00C60C;}
+      100% {background-color: #DBED00;}
+    }
+  }
+
+  .main-logo{
+    margin: 100px auto 100px auto;
+    &:hover {
+        transition: all 0.5s;
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+}
+main{
+  background-color: inherit;
+}
+#artistfiler{
+  background-color: inherit;
+}
+#artistfilter-container{
+  background-color: inherit;
+}
+
+#tag-section{
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    //margin: 100px auto 100px auto;
+    padding: 50px 20px;
+    border: 3px solid black;
+    box-shadow: -2px -2px -3px ;
+    background-color: inherit;
+    
+}
+
+#artist-cards-section{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 90%;
+    margin: 60px auto;
+    border: 3px solid black;
+    // box-shadow: -15px -20px 4px black, 15px 20px 4px black;
+    background-color: inherit;
+}
+
+.tags-artist-tag{
+  font-size: 14px;
+  padding: 15px 20px;
+  margin: 1% 1%;
+  border: 1px solid black;
+  border-radius: 0.1%;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, .1);
+  transition: 0.1s ease-out;
+  
+
+  &:hover{
+      -webkit-transform: scale(1.08);
+      -ms-transform: scale(1.08);
+      transform: scale(1.08);
+      background-color: black;
+      color: white;
+      cursor: pointer;
+  } 
+}
+
+.inactive{
+  color: black;
+  background-color: inherit;
+
+}
+
+.active{
+  background-color: black;
+  color: white;
+  
+}
+
+.artist-tag{
+  display:inline-block;
+  padding: 2% 4%;
+  margin: 3% 3%;
+  border: 1px solid black;
+  border-radius: 5%;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, .1);
+  transition: 0.1s ease-out;
+  font-size: 14px;animation: colorchange 10s; /* animation-name followed by duration in seconds*/
+  /* you could also use milliseconds (ms) or something like 2.5s */
+  background-color: inherit;
+
+
+  &:hover{
+      -webkit-transform: scale(1.06);
+      -ms-transform: scale(1.06);
+      transform: scale(1.06);
+      background-color: black;
+      color: white;
+      cursor: pointer;
+
+  }
+  
+}
+
+$in-out: true !default;
+$fromY: 0 !default;
+$toY: 10% !default;
+$fromOpacity: 1 !default;
+$toOpacity: 0 !default;
+
+@if $in-out {
+    $fromY: 0;
+    $toY: 10%;
+    $fromOpacity: 1;
+    $toOpacity: 0;
+    $in-out: false;
+}
+@else {
+    $fromY: 0;
+    $toY: 10%;
+    $fromOpacity: 1;
+    $toOpacity: 0;
+    $in-out: true;
+}
+
+.artistcard {
+    box-sizing: border-box;
+    max-width: 300px;
+    height: 350px;
+    text-align: center;
+    background-color: white;
+    border-radius: 0.1%;
+    margin: 2% 2%;
+    padding: 20px 20px;
+    //box-shadow: 10px 10px 5px  rgba(19, 18, 18, 1);
+    -webkit-box-shadow: 0 0 10px 10px rgba(97, 38, 38, 0.07);
+    -moz-box-shadow: 0 0 10px 10px rgba(19, 18, 18, 0.07);
+    box-shadow: 0 0 20px 20px rgba(19, 18, 18, 0.07);
+    transition: all 0.1 ease-in-out;
+    animation: flyIn 0.6s ease-in-out;
+    border: 2px solid black;
+    background-color: inherit;
+    // animation: colorchange 10s; /* animation-name followed by duration in seconds*/
+    //      /* you could also use milliseconds (ms) or something like 2.5s */
+    // -webkit-animation: colorchange 10s;
+    // animation-iteration-count: infinite; /* Chrome and Safari */
+    
+
+    // @keyframes colorchange
+    // {
+    //   0%   {background-color: #DBED00;}
+    //   25%  {background-color: #FD007D;}
+    //   50%  {background-color: #FF5B00;}
+    //   75%  {background-color: #00C60C;}
+    //   100% {background-color: #DBED00;}
+    // }
+    // @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+    // {
+    //   0%   {background-color: #DBED00;}
+    //   25%  {background-color: #FD007D;}
+    //   50%  {background-color: #FF5B00;}
+    //   75%  {background-color: #00C60C;}
+    //   100% {background-color: #DBED00;}
+    // }
+
+
+    &:hover{
+        transition: all 0.1s ease-in-out;
+        -webkit-transform: scale(1.06);
+        -ms-transform: scale(1.06);
+        transform: scale(1.06);
+    }
+
+    .artist-name{
+        color: black;
+    }
+    .artist-portrait{
+        border-radius: 50%;
+    }
+    .artist-intro{
+        color: black;
+    }
+    }
+    @-webkit-keyframes flyIn { from { opacity: $fromOpacity;
+        transform: translateY($fromY);} to { opacity: $toOpacity; transform: translateY($toY); }  }
+          @-moz-keyframes flyIn { from { opacity:$fromOpacity;
+        transform: translateY($fromY);} to { opacity:$toOpacity; transform: translateY($toY); }  }
+            @-o-keyframes flyIn { from { opacity:$fromOpacity;
+        transform: translateY($fromY);} to { opacity:$toOpacity; transform: translateY($toY); }  }
+                @keyframes flyIn { from { opacity: 0;
+        transform: translateY(10%);} to { opacity:1; transform: translateY(0); }  }
+
+    @-webkit-keyframes flyOut { from { opacity: $fromOpacity;
+        transform: translateY($fromY);} to { opacity: $toOpacity; transform: translateY($toY); }  }
+            @-moz-keyframes flyOut { from { opacity:$fromOpacity;
+        transform: translateY($fromY);} to { opacity:$toOpacity; transform: translateY($toY); }  }
+                @-o-keyframes flyOut { from { opacity:$fromOpacity;
+        transform: translateY($fromY);} to { opacity:$toOpacity; transform: translateY($toY); }  }
+                @keyframes flyOut { from { opacity: 1;
+        transform: translateY(0);} to { opacity:0; transform: translateY(10%); }  }

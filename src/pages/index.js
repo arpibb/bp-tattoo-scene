@@ -6,30 +6,11 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import "./index.scss"
 import ArtistFilter from "../components/artistfilter"
+import '../components/global.scss'
 
-class IndexPage extends React.Component {
-  constructor(props){
-    super(props);
-    this.querydata = this.props.data.allFile.edges
-    //this.setBgColor = this.setBgColor.bind(this)
-    this.state = {
-      bgState: ""
-    }
-}
-  setBgColor(){
-    const bgColors = ["#DBED00","#FD007D","#FF5B00","#00C60C"]
-    let bgColor = bgColors[Math.floor(Math.random() * bgColors.length)]
-    this.setState({
-      bgState: bgColor
-    })
-    return bgColor
-  }
-  componentDidMount(){
-    this.setBgColor()
-  }
+const IndexPage = (props) => {
 
-  render() {
-    //const querydata = props.data.allFile.edges
+    const querydata = props.data.allFile.edges
 
     function getArtistData(data){
       const artists = []
@@ -59,21 +40,16 @@ class IndexPage extends React.Component {
       
     //   return bgColor
     // }
-    const tags = getTags(this.querydata)
+    const tags = getTags(querydata)
 
-    const artists = getArtistData(this.querydata)
+    const artists = getArtistData(querydata)
 
-    let bgColor = this.state.bgState
-
-
-    //console.log(tags)
-    console.log(this.bgColor)
-    
+    //let bgColor = getBgColor()
   
   return (
     <Layout>
        <Helmet>
-        <style>{`body { background-color: ${bgColor}; }`}</style>
+        {/* <style>{`body { background-color: ${bgColor}; }`}</style> */}
       </Helmet>
       <SEO title="Home" />
       <div 
@@ -88,19 +64,19 @@ class IndexPage extends React.Component {
           width: "auto",
           height: "auto",
         }}
-        bgColor = {bgColor}
+        //bgColor = {bgColor}
          />
       </div>
       
-      <section>
+      <section id="artistfilter">
         <ArtistFilter
           stateObject = {tags}
           artists = {artists}
-          bgColor = {bgColor}
+          //bgColor = {bgColor}
         />
       </section>
     </Layout>
-)}}
+)}
 
 export default IndexPage
 

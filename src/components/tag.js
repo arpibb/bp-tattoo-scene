@@ -3,12 +3,13 @@ import React from "react";
 //import Img from "gatsby-image"
 
 import "./tag.scss"
+import './global.scss'
 
 class Tag extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            bgColor: this.props.bgColor
+            // bgColor: this.props.bgColor
         }}
 
     getBtnClass(){
@@ -25,12 +26,12 @@ class Tag extends React.Component {
         return btnClass
     }
 
-    static getDerivedStateFromProps(nextProps, prevState){
-        if(nextProps.bgColor!==prevState.bgColor){
-          return { bgColor: nextProps.bgColor};
-       }
-       else return null;
-    }
+    // static getDerivedStateFromProps(nextProps, prevState){
+    //     if(nextProps.bgColor!==prevState.bgColor){
+    //       return { bgColor: nextProps.bgColor};
+    //    }
+    //    else return null;
+    // }
 
 
     render() {
@@ -41,7 +42,7 @@ class Tag extends React.Component {
         //console.log(this.props.isActive)
 
         return(
-            <p style={{backgroundColor: `${this.state.bgColor}`}}
+            <p
                 className={btnClass}
                 onClick = {(e) => this.props.handleClick(this.props.tagName)}
             >{this.props.tagName}</p>

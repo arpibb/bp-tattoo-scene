@@ -2,25 +2,23 @@ import React from "react"
 
 import Tag from "../components/tag"
 import Artistcard from "../components/artistcard"
-import "./artistfilter.scss"
+//import "./artistfilter.scss"
+import "./global.scss"
 
 
 class ArtistFilter extends React.Component {
     constructor(props){
         super(props);
-        this.bgColor = this.props.bgColor
-        this.artists = props.artists
+        // this.bgColor = this.props.bgColor
+        this.artists = this.props.artists
         this.handleClick = this.handleClick.bind(this)
-        this.state = {
-            tags: props.stateObject,
-            bgColor: props.bgColor
-        }
+        this.state = props.stateObject
     }
 
     // An array where we register the selected tags is necessary to filter the results
     getActiveTags(){
         let activeTags = []
-        Object.entries(this.state.tags).map(tagState => { 
+        Object.entries(this.state).map(tagState => { 
             if(tagState[1]){
                 activeTags.push(tagState[0])
             }
@@ -32,38 +30,29 @@ class ArtistFilter extends React.Component {
     handleClick(tagName) {
         //console.log(this.state.tags[tagName])
         let stateName = tagName
-        this.setState(prevState => ({tags:
-          {...prevState.tags,
-              [stateName] : !prevState.tags[stateName]}
+        this.setState(prevState => ({
+              [stateName] : !prevState[stateName]
         }))
       }
-
-      static getDerivedStateFromProps(nextProps, prevState){
-        console.log(prevState.bgColor + nextProps.bgColor)  
-        if(nextProps.bgColor!==prevState.bgColor){
-          return { bgColor: nextProps.bgColor};
-       }
-       else return null;
-     }
 
     render(){
 
         let activeTags = this.getActiveTags();
         //console.log(this.state.bgColor+"bgcolor")
-        console.log(this.state.bgColor)
+        // console.log(this.props.bgColor)
         return(
-            <div>
+            <div id="artistfilter-container">
             {/* Tag-section provides the filters for the tattoo artist filter component, 
             we are passing the key-value pairs from this components state, the handleClick function provides the selection on the tags. */}
-            <section id="tag-section"> 
-                {Object.entries(this.state.tags).map(entry => {
+            <section id="tag-section">
+                {Object.entries(this.state).map(entry => {
                     return(
                         <Tag
                             tagName = {entry[0]}
                             isActive = {entry[1]}
                             handleClick = {this.handleClick}
                             tagIsOnArtistCard = {false}
-                            bgColor = {this.state.bgColor}
+                            //bgColor = {this.props.bgColor}
                         />
                     )})}
             </section>
@@ -79,9 +68,9 @@ class ArtistFilter extends React.Component {
                                 intro = {artist.intro}
                                 src = {artist.portrait}
                                 tags = {artist.tags}
-                                tagsState = {this.state.tags}
+                                tagsState = {this.state}
                                 handleClick = {this.handleClick}
-                                bgColor = {this.state.bgColor}
+                                //bgColor = {this.props.bgColor}
                             />)
                  })}
             </section>
