@@ -1,6 +1,10 @@
+$textColor: black;
+$borderColor: black;
+$mainFont: 'Source Code Pro', monospace;
 
 html {
     font-family: sans-serif;
+    font-family:$mainFont;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     box-sizing: border-box;
@@ -69,12 +73,12 @@ main{
     margin: 0 auto;
     //margin: 100px auto 100px auto;
     padding: 50px 20px;
-    border: 0.5px solid black;
+    //border: 0.5px solid black;
     box-shadow: -2px -2px -3px ;
     background-color: inherit;
-    box-shadow: inset 0px 0px 10px black, inset 0px 0px 10px black;
-    -webkit-box-shadow: inset 0px 0px 3px black, inset 1px 1px 5px black;
-    -moz-box-shadow: inset 0px 0px 15px black, inset 0px 0px 15px black;
+    // box-shadow: inset 0px 0px 10px black, inset 0px 0px 10px black;
+    // -webkit-box-shadow: inset 0px 0px 3px black, inset 1px 1px 5px black;
+    // -moz-box-shadow: inset 0px 0px 15px black, inset 0px 0px 15px black;
     
 }
 
@@ -85,10 +89,10 @@ main{
     flex-wrap: wrap;
     max-width: 100%;
     margin: 17px auto;
-    border: 0.5px solid black;
-    box-shadow: inset 0px 0px 10px black, inset 0px 0px 10px black;
-    -webkit-box-shadow: inset 0px 0px 3px black, inset 1px 1px 5px black;
-    -moz-box-shadow: inset 0px 0px 15px black, inset 0px 0px 15px black;
+    //border: 0.5px solid black;
+    // box-shadow: inset 0px 0px 10px black, inset 0px 0px 10px black;
+    // -webkit-box-shadow: inset 0px 0px 3px black, inset 1px 1px 5px black;
+    // -moz-box-shadow: inset 0px 0px 15px black, inset 0px 0px 15px black;
     background-color: inherit;
 }
 
@@ -96,7 +100,9 @@ main{
   font-size: 16px;
   padding: 15px 20px;
   margin: 1% 1%;
-  text-transform: uppercase;
+  text-transform: lowercase;
+  border-right: 1px solid $borderColor;
+  border-left: 1px solid $borderColor;
   //border: 0.5px solid black;
   border-radius: 0.1%;
   transition: 0.1s ease-out;
@@ -116,7 +122,7 @@ main{
 }
 
 .inactive{
-  color: black;
+  color: $textColor;
   background-color: inherit;
 
 }
@@ -131,7 +137,8 @@ main{
   display:inline-block;
   padding: 2% 4%;
   margin: 3% 3%;
-  // border: 1px solid black;
+  border-right: 1px solid $borderColor;
+  border-left: 1px solid $borderColor;
   // border-radius: 5%;
   //box-shadow: 0px 5px 5px rgba(0, 0, 0, .1);
   transition: 0.1s ease-out;
@@ -192,6 +199,8 @@ $toOpacity: 0 !default;
     border-radius: 0.1%;
     margin: 2% 2%;
     padding: 20px 20px;
+    // border-top: 1px solid $borderColor;
+    // border-bottom: 1px solid $borderColor;
     //box-shadow: 10px 10px 5px  rgba(19, 18, 18, 1);
     //-webkit-box-shadow: 0 0 10px 10px rgba(97, 38, 38, 0.07);
     //-moz-box-shadow: 0 0 10px 10px rgba(19, 18, 18, 0.07);
@@ -218,7 +227,8 @@ $toOpacity: 0 !default;
     }
 
     .artist-name{
-        color: black;
+        color: $textColor;
+        
     }
     }
     @-webkit-keyframes flyIn { from { opacity: $fromOpacity;

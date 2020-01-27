@@ -56,7 +56,7 @@ class ArtistFilter extends React.Component {
                         />
                     )})}
             </section>
-            {/* The artist cards section is where all the tattoo artists cards are displayed, based on the active Tags, which are the already clicked tags,
+            {/* The artist cards section is where all the tattoo artists' cards are displayed, based on the active Tags, which are the already clicked tags,
             when there is no tags selected, all the artistscards are going to be displayed. */}
             <section id="artist-cards-section">
                 {this.artists.map(artist => {
