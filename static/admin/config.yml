@@ -13,8 +13,7 @@ collections:
     identifier_field: name
     fields:
       - {label: "Name", name: "name", widget: "string"}
-      - {label: Intro text, name: intro, widget: text}
-      - {label: "Portrait Image", name: "portrait", widget: "image"}
+      - {label: "Insta link", name: "insta", widget: text}
       - {label: "Tags", name: "tags", widget: "list"}
 
   - label: "Pages"

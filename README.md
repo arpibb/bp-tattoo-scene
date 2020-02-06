@@ -20,4 +20,8 @@ https://www.google.com/search?ei=2AblXauqHe3nrgT6-pCQBw&q=react+filter+codepen&o
 
 https://www.npmjs.com/package/react-filter-search
 
+<<<<<<< HEAD
 update
+=======
+https://medium.com/better-programming/creating-a-multi-filter-function-to-filter-out-multiple-attributes-javascript-react-rails-5aad8e272142
+>>>>>>> dc2dad649b3bd2e02ab2eaf5d194ca136bee9e3a
