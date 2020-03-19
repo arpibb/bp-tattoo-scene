@@ -1,9 +1,14 @@
-This is a project for a friend.
+This is a project was meant to be a very simple site for a tattoo artist friend of mine.
 
-Learning stuff from here:
+A list of 'ignorant' tattoo artist in Budapest with tag filtering. 
+
+Built with Gatsby + NetlifyCMS.
+
+This is a list of resources that helped me when I gout stuck:
+
+Gatsby + NetlifyCMS
 https://www.frontendstumbles.com/gatsby-and-netlify-cms-tutorial/
 
-and here:
 https://www.frontendstumbles.com/using-gatsby-image-with-netlify-cms/
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/1dc21b04-c224-43be-bffd-f2be14123d46/deploy-status)](https://app.netlify.com/sites/bp-tattoo-scene/deploys)
@@ -21,3 +26,5 @@ https://www.google.com/search?ei=2AblXauqHe3nrgT6-pCQBw&q=react+filter+codepen&o
 https://www.npmjs.com/package/react-filter-search
 
 https://medium.com/better-programming/creating-a-multi-filter-function-to-filter-out-multiple-attributes-javascript-react-rails-5aad8e272142
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1dc21b04-c224-43be-bffd-f2be14123d46/deploy-status)](https://app.netlify.com/sites/bp-tattoo-scene/deploys)
