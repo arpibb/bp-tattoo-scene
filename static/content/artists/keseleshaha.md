@@ -9,4 +9,3 @@ tags:
   - Cartoon
   - comic
 ---
-

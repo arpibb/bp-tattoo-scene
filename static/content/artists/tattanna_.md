@@ -12,4 +12,3 @@ tags:
   - floral
   - minimal
 ---
-
