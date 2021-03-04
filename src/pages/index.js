@@ -15,7 +15,6 @@ const IndexPage = props => {
     for (let i = 0; i < data.length; i++) {
       artists.push(data[i].node.childMarkdownRemark.frontmatter)
     }
-    //console.log(artists)
     return artists
   }
 
@@ -30,22 +29,13 @@ const IndexPage = props => {
     return tags
   }
 
-  // function getBgColor(){
-  //   const bgColors = ["#DBED00","#FD007D","#FF5B00","#00C60C"]
-  //   let bgColor = bgColors[Math.floor(Math.random() * bgColors.length)]
-
-  //   return bgColor
-  // }
   const tags = getTags(querydata)
 
   const artists = getArtistData(querydata)
 
-  //let bgColor = getBgColor()
-
   return (
     <Layout>
       <Helmet>
-        {/* <style>{`body { background-color: ${bgColor}; }`}</style> */}
       </Helmet>
       <SEO title="Home" />
       <div
@@ -61,7 +51,6 @@ const IndexPage = props => {
             width: 'auto',
             height: 'auto',
           }}
-          //bgColor = {bgColor}
         />
       </div>
 
@@ -69,7 +58,6 @@ const IndexPage = props => {
         <ArtistFilter
           stateObject={tags}
           artists={artists}
-          //bgColor = {bgColor}
         />
       </section>
     </Layout>
